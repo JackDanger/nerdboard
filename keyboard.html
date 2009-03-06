@@ -43,6 +43,7 @@
 
 					$('.key').draggable({
 						opacity: 0.35,
+						zIndex: 100,
 						snap: true,
 						snapMode: 'outer',
 						reset: true
@@ -82,12 +83,17 @@
 			#keyboard .key {
 				display: block;
 				float: left;
-				height: 2em;
+				height: 1.5em;
 				width: 2em;
+				padding-top: 0.3em;
+				text-align: center;
 				border-width: 2px;
 				border-style: ridged;
 			}
-			/* adjust alignment */
+			#keyboard .ui-draggable-dragging {
+				background-color: #EEE;
+			}
+			/* adjust alignment key row alignment */
 			#home {
 				margin-left: 0.89em;
 			}
