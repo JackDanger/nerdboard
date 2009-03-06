@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript" language="javascript">
+
+			$(function(){
+				
+				// set up keyboard
+				var topRow = $('<div class="row" id="top">')
+				var homeRow = $('<div class="row" id="home">')
+				var bottomRow = $('<div class="row" id="bottom">')
+
+				$.each(['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '{[', ']}'], function(_,key){
+					topRow.append(
+						$('<div />')
+							.attr('class', 'key')
+							.attr('id', key)
+							.html(key)
+					)
+				})
+				$.each(['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ':;', '"\''], function(_,key){
+					homeRow.append(
+						$('<div />')
+							.attr('class', 'key')
+							.attr('id', key)
+							.html(key)
+					)
+				})
+				$.each(['Z', 'X', 'C', 'V', 'B', 'N', 'M', '<,', '>.', '/?'], function(_,key){
+					bottomRow.append(
+						$('<div />')
+							.attr('class', 'key')
+							.attr('id', key)
+							.html(key)
+					)
+				})
+				$('#keyboard')
+					.append(topRow)
+					.append(homeRow)
+					.append(bottomRow)
+			})
+			
+		</script>
+		<style>
+			body {
+				font-size: 2em;
+			}
+			#keyboard {
+				width: 24em;
+				margin: 2em auto;
+				text-align:; center;
+			}
+			#keyboard .row {
+				float: left;
+				clear: both;
+			}
+			#keyboard .key {
+				float: left;
+				height: 2em;
+				width: 2em;
+				border-width: 2px;
+				border-style: ridged;
+			}
+			/* adjust alignment */
+			#home {
+				margin-left: 0.89em;
+			}
+			#bottom {
+				margin-left: 1.8em;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="keyboard">
+		</div>
+	</body>
+</html>
